@@ -75,11 +75,10 @@ server.put("/list/:id",verify, (req,res) =>{
 server.delete("/list/:id", (req,res)=>{
 
     const {id} = req.params;
-    list.find(id);
+    list.splice(id,1);
 
     return res.json({
-        result: "deleted",
-        
+        result: "deleted"  
     });
 });
 
